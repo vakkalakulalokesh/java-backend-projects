@@ -1,0 +1,8 @@
+#!/bin/bash
+set -e
+psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" <<-EOSQL
+    CREATE DATABASE transaction_db;
+    CREATE DATABASE alert_db;
+    GRANT ALL PRIVILEGES ON DATABASE transaction_db TO $POSTGRES_USER;
+    GRANT ALL PRIVILEGES ON DATABASE alert_db TO $POSTGRES_USER;
+EOSQL

@@ -1,0 +1,17 @@
+FROM maven:3.9.9-eclipse-temurin-17 AS build
+WORKDIR /w
+COPY pom.xml .
+COPY common ./common
+COPY product-service ./product-service
+COPY order-service ./order-service
+COPY payment-service ./payment-service
+COPY inventory-service ./inventory-service
+COPY notification-service ./notification-service
+ARG MODULE=product-service
+RUN mvn -q -pl ${MODULE} -am package -DskipTests
+
+FROM eclipse-temurin:17-jre-jammy
+WORKDIR /app
+ARG MODULE=product-service
+COPY --from=build /w/${MODULE}/target/${MODULE}-*.jar /app/app.jar
+ENTRYPOINT ["java","-jar","/app/app.jar"]

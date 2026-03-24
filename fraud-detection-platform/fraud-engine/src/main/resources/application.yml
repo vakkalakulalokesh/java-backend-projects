@@ -1,0 +1,39 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: fraud-engine
+  data:
+    redis:
+      host: redis
+      port: 6379
+  kafka:
+    bootstrap-servers: kafka:9092
+    consumer:
+      group-id: fraud-engine-group
+      auto-offset-reset: earliest
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      probes:
+        enabled: true
+
+fraud:
+  rules:
+    amount:
+      threshold-high: 10000
+      threshold-medium: 5000
+      threshold-low: 2000
+    velocity:
+      window10m-minutes: 10
+      window5m-minutes: 5
+      limit10m: 5
+      limit5m: 3
+    frequency:
+      window-minutes: 5

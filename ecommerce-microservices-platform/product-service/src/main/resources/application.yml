@@ -1,0 +1,32 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: product-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/product_db
+    username: ecommerce
+    password: ecommerce
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+app:
+  cache:
+    product-ttl-minutes: 30
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
