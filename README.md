@@ -1,10 +1,10 @@
 # Java Backend Projects
 
-A collection of production-grade Java backend projects demonstrating enterprise-level system design, distributed systems, event-driven architecture, and microservices patterns.
+A collection of Java backend projects demonstrating enterprise-level system design, distributed systems, event-driven architecture, and microservices patterns.
 
 ## Projects
 
-### 1. [Real-Time Fraud Detection Platform](./fraud-detection-platform) ⭐ NEW
+### 1. [Real-Time Fraud Detection Platform](./fraud-detection-platform)
 A multi-service fraud detection and transaction monitoring platform for the fintech domain. Processes financial transactions in real-time through a configurable rule engine with 6 fraud detection rules.
 
 **Architecture:** 3 Microservices + Shared Common Module
@@ -21,7 +21,7 @@ A multi-service fraud detection and transaction monitoring platform for the fint
 
 ---
 
-### 2. [E-Commerce Microservices Platform](./ecommerce-microservices-platform) ⭐ NEW
+### 2. [E-Commerce Microservices Platform](./ecommerce-microservices-platform) 
 A full-scale e-commerce backend demonstrating Saga Orchestration for distributed transactions, CQRS, event sourcing, and microservices best practices.
 
 **Architecture:** 5 Microservices + Shared Common Module
@@ -40,7 +40,7 @@ A full-scale e-commerce backend demonstrating Saga Orchestration for distributed
 ---
 
 ### 3. [Event-Driven Notification Service](./event-driven-notification-service)
-A production-grade notification microservice with Kafka for async processing and multi-channel delivery.
+A notification microservice with Kafka for async processing and multi-channel delivery.
 
 **Tech Stack:** Java 17, Spring Boot 3.2, Apache Kafka, Redis, PostgreSQL, WebSocket, Docker
 
